@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='layout.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>bichoito</title>
+</head>
+<body  style="background-color: rgb(253, 252, 233);">
+    <header>
+
+
+        <div class="cabecalho">
+            <ul>
+                <li><img src="/" alt="bichoito"></li>
+                <li><a href="{{url_for('home.home')}}">Home</a></li>
+                <li><a href="Duvidas.html"></a>Consultoria</li>
+                <li><a href="{{url_for('produto.home')}}">Produtos</a></li>
+                <li><a href="about_us.html">Sobre nós</a></li>
+                <li><a href="adicionarUsuario.html">logar <img src="/usuario.jpg" alt="" width="20" height="20"></a> </li>
+                <li><a href="{{url_for('adm.home')}}">adm</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <center>
+        <h1>Bem vindo ao nosso Pet shop😼</h1>
+        </center>
+        <div>
+            <img src="/" alt="*imagem maneira de animais felizes">
+        </div>
+        <p></p>
+        <p></p>
+        <center>
+            <div class="meio1">
+                <h4>sua primeira vez aqui? Faça seu cadastro aqui em baixo😁</h4>
+                <a href="/usuario/cadastro" class="botao">cadastro</a>
+            </div>
+        </center>
+    </main>
+</body>
+</html>
