@@ -1,0 +1,63 @@
+h1{
+    text-align: center;
+}
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+}
+
+.caixa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.usuario {
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    border: black solid 2px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.foto_perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.foto_produto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.item{
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    border: black solid 2px;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
