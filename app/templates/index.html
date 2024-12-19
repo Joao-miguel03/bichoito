@@ -9,33 +9,34 @@
 </head>
 <body  style="background-color: rgb(253, 252, 233);">
     <header>
-
-
-        <div class="cabecalho">
+        <img src="{{url_for('static', filename='BICHOITO.png')}}" class="bichoito">
+        <h1 class="title">{{nome}}</h1>
+        <nav>
             <ul>
-                <li><img src="/" alt="bichoito"></li>
-                <li><a href="{{url_for('home.home')}}">Home</a></li>
-                <li><a href="Duvidas.html"></a>Consultoria</li>
-                <li><a href="{{url_for('produto.home')}}">Produtos</a></li>
-                <li><a href="about_us.html">Sobre nós</a></li>
-                <li><a href="adicionarUsuario.html">logar <img src="/usuario.jpg" alt="" width="20" height="20"></a> </li>
-                <li><a href="{{url_for('adm.home')}}">adm</a></li>
+                <li><a class="cabecalho" href="{{url_for('home.home')}}">Home</a></li>
+                <li><a class="cabecalho" href="{{url_for('home.duvidas')}}">Duvidas</a></li>
+                <li><a class="cabecalho" href="{{url_for('produto.home')}}">Produtos</a></li>
+                <li><a class="cabecalho" href="about_us.html">Sobre nós</a></li>
+                <li><a class="cabecalho" href="{{url_for('usuario.logar')}}">logar</a><img src="{{url_for('static', filename='usuario.jpg')}}" alt="" width="20" height="20"> </li>
+                <li><a class="cabecalho" href="{{url_for('adm.home')}}">adm</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
     <main>
         <center>
         <h1>Bem vindo ao nosso Pet shop😼</h1>
         </center>
         <div>
-            <img src="/" alt="*imagem maneira de animais felizes">
+            <img style="height: 75px; width:75px;" src="{{url_for('static', filename='cachorroFeliz.png')}}" alt="*imagem maneira de animais felizes">
         </div>
         <p></p>
         <p></p>
         <center>
             <div class="meio1">
+                {% if logado == False %}
                 <h4>sua primeira vez aqui? Faça seu cadastro aqui em baixo😁</h4>
                 <a href="/usuario/cadastro" class="botao">cadastro</a>
+                {% endif %}
             </div>
         </center>
     </main>

@@ -3,6 +3,7 @@ from app.models.usuario import Usuario
 from app.models.petiscoCachorro import PetiscoCachorro
 from app.models.petiscoGato import PetiscoGato
 from app.models.brinquedo import Brinquedo
+from app.models.duvida import Duvida
 from app.__init__ import db
 
 admBlueprint = Blueprint("adm", __name__, url_prefix="/adm")
@@ -17,5 +18,6 @@ def listar():
     produtosCachorro = PetiscoCachorro.query.all()
     produtosGato = PetiscoGato.query.all()
     produtosBrinquedo = Brinquedo.query.all()
+    duvidas= Duvida.query.all()
 
-    return render_template("listarTudo.html", usuarios = usuarios, produtosCachorro = produtosCachorro, produtosGato = produtosGato, produtosBrinquedo = produtosBrinquedo)
+    return render_template("listarTudo.html", usuarios = usuarios, produtosCachorro = produtosCachorro, produtosGato = produtosGato, produtosBrinquedo = produtosBrinquedo, duvidas = duvidas)

@@ -1,23 +1,55 @@
-.cabecalho{
-    display: inline;
-    
+header {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background: rgb(164, 94, 50);
+    position: fixed;
+    width: 100%;
+    top: 0;
+   }
+   
+header, nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+   }
+   
+nav ul li {
+    margin-left: 1rem;
+    list-style-type: none;
+   }
+
+.bichoito{
+    width: 95px;
+    height: 50px;
+    object-fit: cover;
 }
 
+a{
+    text-decoration-color: none; 
+    text-decoration-line: none;
+    text-decoration-style: none;
+}
 
 .meio1{
     color: rgb(164, 94, 50);
 }
 
 body{
-    background-color: rgb(231, 204, 167);
+    display: flex;
+    background-color: rgb(253, 252, 233);
+    margin:0;
+    padding-top: 115px;
+    justify-content: center;
 }
 
 h1{
     text-align: center;
+    border-radius: 10px;
     color: rgb(228, 214, 205);
     background-color: rgb(164, 94, 50);
+    width: auto;
 }
 .botao {
+    margin: 30px 35px 15px 35px;
     display: inline-block;
     padding: 10px 20px;
     color: white;
@@ -49,6 +81,8 @@ h1{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    text-decoration: none;
+    color: black;
 }
 
 .foto_perfil {
@@ -76,4 +110,35 @@ h1{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.cabecalho{
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.formulario{
+    background-color: rgb(253, 252, 233);
+    border: 3px solid black;
+    border-radius: 2%; 
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+main{
+    margin-top: 18px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 2%;
+    background-color: rgb(253, 252, 233);
 }

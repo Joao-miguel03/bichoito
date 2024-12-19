@@ -8,6 +8,20 @@
     <title>edit</title>
 </head>
 <body>
+    <header>
+        <img src="{{url_for('static', filename='BICHOITO.png')}}" class="bichoito">
+        <nav>
+            <ul>
+                <li><a class="cabecalho" href="{{url_for('home.home')}}">Home</a></li>
+                <li><a class="cabecalho" href="{{url_for('home.duvidas')}}">Duvidas</a></li>
+                <li><a class="cabecalho" href="{{url_for('produto.home')}}">Produtos</a></li>
+                <li><a class="cabecalho" href="about_us.html">Sobre nós</a></li>
+                <li><a class="cabecalho" href="{{url_for('usuario.logar')}}">logar</a><img src="{{url_for('static', filename='usuario.jpg')}}" alt="" width="20" height="20"> </li>
+                <li><a class="cabecalho" href="{{url_for('adm.home')}}">adm</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="formulario">
     <div class="container mt-5">
         <h1>Editar</h1>
         <!-- Exibir mensagens -->
@@ -35,8 +49,12 @@
             <input type="file" name="foto_perfil" id="foto_perfil" accept="image/*" value="{{usuario.foto_perfil}}"><br><br>
             
 
-            <button type="submit" class="botao">Enviar</button>
-
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+            
         </form>
+        <form action="{{url_for('usuario.delete', usuario_id = usuario.id)}}" method="post">
+            <button type="submit" class="btn btn-danger">APAGAR</button>
+        </form>
+        </main>
 </body>
 </html>

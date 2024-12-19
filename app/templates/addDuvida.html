@@ -23,7 +23,7 @@
     </header>
     <main>
         <div class="container mt-5">
-            <h1>Fazer um cadastro</h1>
+            <h1>Fazer uma duvida</h1>
             <!-- Exibir mensagens -->
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
@@ -35,15 +35,15 @@
                 {% endif %}
             {% endwith %}
 
-            <form action="{{url_for('usuario.cadastro')}}" method="post">
-                <label for="nome">Nome</label><br>
-                <input type="text" name="nome" id="nome"><br><br>
+            <form action="{{url_for('home.addDuvida')}}" method="post">
+                <label for="titulo">Escreva aqui a sua duvida</label><br>
+                <input type="text" name="titulo" id="titulo"><br><br>
 
-                <label for="email">Email</label><br>
+                <label for="descricao">Escreva aqui a descrição que responde a pergunta</label><br>
                 <input type="text" name="email" id="email"><br><br>
 
-                <label for="senha">Senha</label><br>
-                <input type="password" name="senha" id="senha"><br><br>
+                <label for="nome_usuario">Nome do usuario</label><br>
+                <input type="text" name="nome_usuario" id="nome_usuario"><br><br>
 
                 <button type="submit" class="btn btn-primary">cadastrar</button>
 

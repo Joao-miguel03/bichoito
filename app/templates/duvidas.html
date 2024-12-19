@@ -21,42 +21,18 @@
             </ul>
         </nav>
     </header>
-<main>
+    <main>
+        <a href="{{url_for('home.addDuvida')}}" class="botao">adicionar duvida</a><br>
 
-    <h1>LISTA dos PETISCOS PARA CACHORRO</h1>    
-    <div class="caixa">
-    {% for produto in produtosCachorro %}
-    <a class="item" href="{{ url_for('produto.update', produto_id = produto.id)}}">
-        <img src="{{ url_for('produto.foto', produto_id = produto.id)}}" alt="" class="foto_produto">
-        <p>{{produto.nome}}</p>
-    </a>
-    {% endfor %}
-    </div>
+        <h1>DUVIDAS</h1>
+        <div class="caixa">
+            {% for duvida in duvidas %}
+            <div class="item">
+                <h2>{{duvida.titulo}}</h2>
+            </div>
+            {% endfor %}
+        </div>
 
-    <br>
-
-    <h1>LISTA dos PETISCOS PARA GATO</h1>
-    <div class="caixa">
-    {% for produto in produtosGato %}
-    <a class="item" href="{{ url_for('produto.update', produto_id = produto.id)}}">
-        <img src="{{url_for('produto.foto', produto_id = produto.id)}}" alt="" class="foto_produto">
-        <p>{{produto.nome}}</p>
-    </a>
-    {% endfor %}
-    </div>   
-    
-    <br>
-
-    <h1>LISTA dos BRINQUEDOS</h1>
-    <div class="caixa">
-    {% for produto in produtosBrinquedo %}
-    <a class="item" href="{{ url_for('produto.update', produto_id = produto.id)}}">
-        <img src="{{url_for('produto.foto', produto_id = produto.id)}}" alt="" class="foto_produto">
-        <p>{{produto.nome}}</p>
-    </a>
-    {% endfor %}
-    </div>
-
-</main>
+    </main>
 </body>
 </html>

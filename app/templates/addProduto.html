@@ -8,6 +8,19 @@
     <title>ADD PRODUTOS</title>
 </head>
 <body>
+    <header>
+        <img src="{{url_for('static', filename='BICHOITO.png')}}" class="bichoito">
+        <nav>
+            <ul>
+                <li><a class="cabecalho" href="{{url_for('home.home')}}">Home</a></li>
+                <li><a class="cabecalho" href="{{url_for('home.duvidas')}}">Duvidas</a></li>
+                <li><a class="cabecalho" href="{{url_for('produto.home')}}">Produtos</a></li>
+                <li><a class="cabecalho" href="about_us.html">Sobre nós</a></li>
+                <li><a class="cabecalho" href="{{url_for('usuario.logar')}}">logar</a><img src="{{url_for('static', filename='usuario.jpg')}}" alt="" width="20" height="20"> </li>
+                <li><a class="cabecalho" href="{{url_for('adm.home')}}">adm</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Exibir mensagens -->
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -20,8 +33,8 @@
         {% endif %}
     {% endwith %}
 
-    <form action="{{url_for('produto.add')}}" method="post" enctype="multipart/form-data">
-        <label for="">Qual tipo de produto:</label><br>
+    <form class="formulario" action="{{url_for('produto.add')}}" method="post" enctype="multipart/form-data">
+        <label for="tipo">Qual tipo de produto:</label><br>
             <input type="radio" name="tipo" id="brinquedo" value="brinquedo">
             <label for="brinquedo">BRINQUEDO</label><br>
 
@@ -31,7 +44,7 @@
             <input type="radio" name="tipo" id="petiscoG" value="petiscoG">
             <label for="petiscoG">PETISCO GATO</label><br><br>
 
-        <label for="nome">Nome do Produto: </label>
+        <label for="nome">Nome do Produto: </label><br>
         <input type="text" name="nome" id="nome"><br><br>
 
         <label for="descricao">Descrição do Produto: </label><br>
@@ -49,7 +62,7 @@
         <label for="imagem">Imagem:</label><br>
         <input type="file" name="imagem" id="imagem" accept="image/*"><br><br>
 
-        <button type="submit" class="botao">Adicionar</button>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
 
     </form>
 </body>
