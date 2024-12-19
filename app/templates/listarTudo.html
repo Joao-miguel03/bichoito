@@ -8,7 +8,21 @@
     <title>bichoito</title>
 </head>
 <body>
-    <hr>
+    <header>
+        <img src="{{url_for('static', filename='BICHOITO.png')}}" class="bichoito">
+        <nav>
+            <ul>
+                <li><a class="cabecalho" href="{{url_for('home.home')}}">Home</a></li>
+                <li><a class="cabecalho" href="{{url_for('home.duvidas')}}">Duvidas</a></li>
+                <li><a class="cabecalho" href="{{url_for('produto.home')}}">Produtos</a></li>
+                <li><a class="cabecalho" href="about_us.html">Sobre nós</a></li>
+                <li><a class="cabecalho" href="{{url_for('usuario.logar')}}">logar</a><img src="{{url_for('static', filename='usuario.jpg')}}" alt="" width="20" height="20"> </li>
+                <li><a class="cabecalho" href="{{url_for('adm.home')}}">adm</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+
     <h1>LISTA dos USUARIOS</h1>
     <div class="caixa">
     {% for usuario in usuarios %}
@@ -21,7 +35,7 @@
     {% endfor %}
     </div>
 
-    <hr>
+    <br>
 
     <h1>LISTA dos PETISCOS PARA CACHORRO</h1>    
     <div class="caixa">
@@ -33,7 +47,7 @@
     {% endfor %}
     </div>
 
-    <hr>
+    <br>
 
     <h1>LISTA dos PETISCOS PARA GATO</h1>
     <div class="caixa">
@@ -45,7 +59,7 @@
     {% endfor %}
     </div>   
     
-    <hr>
+    <br>
 
     <h1>LISTA dos BRINQUEDOS</h1>
     <div class="caixa">
@@ -56,14 +70,17 @@
     </a>
     {% endfor %}
     </div>
-    <hr>
 
-    <div class="caixa">
-    {% for duvida in duvidas %}
-    <div class="item">
-        <img src="" alt="" class="foto_produto">
-    </div>
-    {% endfor %}
-    </div>
+    <br>
+
+        <h1>DUVIDAS</h1>
+        <div class="caixa">
+            {% for duvida in duvidas %}
+            <div class="item">
+                <h2>{{duvida.titulo}}</h2>
+            </div>
+            {% endfor %}
+        </div>
+</main>
 </body>
 </html>

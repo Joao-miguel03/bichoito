@@ -8,9 +8,29 @@
     <title>ADM</title>
 </head>
 <body>
+    <header>
+        <img src="{{url_for('static', filename='BICHOITO.png')}}" class="bichoito">
+        <nav>
+            <ul>
+                <li><a class="cabecalho" href="{{url_for('home.home')}}">Home</a></li>
+                <li><a class="cabecalho" href="{{url_for('home.duvidas')}}">Duvidas</a></li>
+                <li><a class="cabecalho" href="{{url_for('produto.home')}}">Produtos</a></li>
+                <li><a class="cabecalho" href="about_us.html">Sobre nós</a></li>
+                <li><a class="cabecalho" href="{{url_for('usuario.logar')}}">logar</a><img src="{{url_for('static', filename='usuario.jpg')}}" alt="" width="20" height="20"> </li>
+                <li><a class="cabecalho" href="{{url_for('adm.home')}}">adm</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
     <h1>ESSE É O ADMINISTRADOR</h1>
 
-    <a href="{{url_for('adm.listar')}}">lista</a>
+    <a class="botao" href="{{url_for('adm.listar')}}">lista de tudo</a>
+
+    <a class="botao" href="{{url_for('produto.add')}}">adicionar produtos</a>
+
+    <a href="{{url_for('usuario.cadastro')}}" class="botao">adicionar usuario</a>
     
+    <a href="{{url_for('home.addDuvida')}}" class="botao">adicionar duvida</a>
+</main>
 </body>
 </html>

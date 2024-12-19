@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, request, url_for, flash, Response
+from flask_login import login_user, login_required, current_user
 from app.models.usuario import Usuario
 from app.__init__ import db
 
@@ -38,16 +39,12 @@ def update(usuario_id):
         senha = request.form.get('senha')
         foto_perfil = request.files['foto_perfil']
 
-        if not nome or not email:
-            flash('Todos os campos devem ser preenchidos!', 'error')
-            return redirect(url_for('home.home'))
-        
-        try:
+        if foto_perfil:
             usuario.nome = nome
             usuario.email = email
             usuario.senha = senha
             usuario.foto_perfil = foto_perfil.read()
-        except:
+        else:
             usuario.nome = nome
             usuario.email = email
             usuario.senha = senha
@@ -56,6 +53,16 @@ def update(usuario_id):
 
         print("Funcionou!")
         return redirect(url_for('adm.listar'))
+    
+
+@usuarioBlueprint.route('/delete/<int:usuario_id>', methods=["POST"])
+def delete(usuario_id):
+    usuario = Usuario.query.filter_by(id=usuario_id).first()
+    if usuario:
+        db.session.delete(usuario)
+        db.session.commit()
+    return redirect(url_for('adm.listar'))
+
 
 @usuarioBlueprint.route('/foto/<int:usuario_id>', methods = ['GET'])
 def foto(usuario_id):
@@ -66,5 +73,25 @@ def foto(usuario_id):
         # Retornar uma imagem padrão caso não tenha foto
         return redirect(url_for('static', filename='default.png'))
 
+@usuarioBlueprint.route('/logar', methods=["GET", "POST"])
+def logar():
+    if request.method == "GET":
+        return render_template('login.html')
+    if request.method == "POST":
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        remember = True if request.form.get('remember') else False
 
+        user = Usuario.query.filter_by(email = email).first()
 
+        if not email or not senha:
+            flash("Todos os campos devem ser preenchidos", 'error')
+            return redirect(url_for("usuario.logar"))
+        
+        login_user(user, remember)
+        return redirect(url_for('usuario.profile'))
+    
+@usuarioBlueprint.route('/profile')
+@login_required
+def profile():
+    return render_template('index.html', nome = current_user.nome, logado = True)

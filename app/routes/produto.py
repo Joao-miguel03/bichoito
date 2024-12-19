@@ -8,7 +8,11 @@ produtoBlueprint = Blueprint('produto', __name__, url_prefix="/produto")
 
 @produtoBlueprint.route('/', methods = ['GET'])
 def home():
-    return render_template('tiposProdutos.html')
+    produtosCachorro = PetiscoCachorro.query.all()
+    produtosGato = PetiscoGato.query.all()
+    produtosBrinquedo = Brinquedo.query.all()
+
+    return render_template("produtos.html", produtosCachorro = produtosCachorro, produtosGato = produtosGato, produtosBrinquedo = produtosBrinquedo)
 
 @produtoBlueprint.route('/add', methods = ['GET','POST'])
 def add():

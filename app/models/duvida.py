@@ -6,7 +6,7 @@ class Duvida (db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
     titulo = db.Column(db.String(80), nullable = False)
     descricao = db.Column(db.String(80), nullable = True)
-    id_usuario =db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable = False)
+    id_usuario =db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable = True)
 
     usuario = db.relationship('Usuario', backref='duvida', lazy=True)
 
